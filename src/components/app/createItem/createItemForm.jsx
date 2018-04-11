@@ -1,13 +1,13 @@
 import React from 'react';
 
-class App extends React.Component {
+class CreateItemForm extends React.Component {
   render () {
     return (
-      <div className='todoListWrapper'>
-        <TodoList />
-        <CreateItem />
-      </div>
+      <form>
+        <input type='text' placeholder='Write something here.' />
+        <button type='button'>Click me, baby.</button>
+      </form>
     );
   }
 }
-export default App;
+export default CreateItemForm;
