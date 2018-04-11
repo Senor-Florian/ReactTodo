@@ -3,16 +3,16 @@ import React from 'react';
 class TodoItem extends React.Component {
   constructor (props) {
     super(props);
-    this.state = { isRed: false };
+    this.state = { isDone: false };
   }
-  changeColor () {
-    this.setState({ isRed: !this.state.isRed });
+  changeDone () {
+    this.setState({ isDone: !this.state.isDone });
   }
   render () {
     return (
       <li
-        onClick={this.changeColor.bind(this)}
-        style={{color: (this.state.isRed ? 'red' : '')}}
+        onClick={this.changeDone.bind(this)}
+        style={{color: (this.state.isDone ? 'red' : '')}}
       >{this.props.label}</li>
     );
   }
