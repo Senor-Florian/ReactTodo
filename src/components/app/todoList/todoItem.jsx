@@ -13,7 +13,9 @@ class TodoItem extends React.Component {
       <li
         onClick={this.changeDone.bind(this)}
         style={{color: (this.state.isDone ? 'red' : '')}}
-      >{this.props.label}</li>
+      ><input type='checkbox' />
+        {this.props.label}
+      </li>
     );
   }
 }
