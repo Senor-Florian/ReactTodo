@@ -1,4 +1,5 @@
 import React from 'react';
+import {Button} from 'react-bootstrap';
 
 class CreateItemForm extends React.Component {
   constructor (props) {
@@ -8,7 +9,6 @@ class CreateItemForm extends React.Component {
     };
   }
   submit () {
-    console.log('Submit successful', this.state.inputValue);
     this.props.submit(this.state.inputValue);
   }
   changeInputValue (element) {
@@ -18,7 +18,7 @@ class CreateItemForm extends React.Component {
     return (
       <form>
         <input type='text' value={this.state.inputValue} onChange={this.changeInputValue.bind(this)} />
-        <button type='button' onClick={this.submit.bind(this)}>Click me, baby.</button>
+        <Button type='button' onClick={this.submit.bind(this)}>Add new task</Button>
         <br />
         {this.state.inputValue}
       </form>
