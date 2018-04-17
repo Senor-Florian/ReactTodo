@@ -1,7 +1,8 @@
 import React from 'react';
+import Jumbotron from 'react-bootstrap/lib/Jumbotron';
 import TodoList from './app/todoList';
 import CreateItem from './app/createItem';
-import {Jumbotron, PageHeader, FormGroup, ModalFooter} from 'react-bootstrap';
+import ModalFooter from 'react-bootstrap/lib/ModalFooter';
 
 class App extends React.Component {
   constructor (props) {
@@ -36,13 +37,11 @@ class App extends React.Component {
   render () {
     return (
       <div id='wrapper' className='todoListWrapper'>
-        <PageHeader id='pageHeader'>GARY's PIMPED TODOs</PageHeader>
-        <Jumbotron id='jumbotron'>
-          <FormGroup>
-            <TodoList todos={this.state.todos} delete={this.delete.bind(this)} />
-            <CreateItem submit={this.submit.bind(this)} />
-          </FormGroup>
+        <Jumbotron bsClass='jumbo' >
+          <h1 id='header'>GARY's PIMPED TODOs</h1>
         </Jumbotron>
+        <TodoList todos={this.state.todos} delete={this.delete.bind(this)} />
+        <CreateItem submit={this.submit.bind(this)} />
         <ModalFooter>Gergely Flórián Papp, 2018.</ModalFooter>
       </div>
     );

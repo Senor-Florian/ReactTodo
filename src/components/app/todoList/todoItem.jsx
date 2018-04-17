@@ -1,5 +1,5 @@
 import React from 'react';
-
+import ListGroupItem from 'react-bootstrap/lib/ListGroupItem';
 class TodoItem extends React.Component {
   constructor (props) {
     super(props);
@@ -16,11 +16,12 @@ class TodoItem extends React.Component {
   }
   render () {
     return (
-      <li
+      <ListGroupItem
+        bsClass='list-group-item'
         style={{opacity: (this.state.isDone ? 0.4 : 1)}}>
         <input id='checkbox' type='checkbox' checked={this.state.isDone} onClick={this.delete.bind(this)} />
         {this.props.todo.label}
-      </li>
+      </ListGroupItem>
     );
   }
 }

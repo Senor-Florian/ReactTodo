@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button} from 'react-bootstrap';
+import Button from 'react-bootstrap/lib/Button';
 
 class CreateItemForm extends React.Component {
   constructor (props) {
@@ -17,8 +17,8 @@ class CreateItemForm extends React.Component {
   render () {
     return (
       <form>
-        <input type='text' value={this.state.inputValue} onChange={this.changeInputValue.bind(this)} />
-        <Button type='button' onClick={this.submit.bind(this)}>Add new task</Button>
+        <input id='new-task' type='text' placeholder='Add a new task' value={this.state.inputValue} onChange={this.changeInputValue.bind(this)} />
+        <Button bsStyle='primary' bsSize='large' type='button' onClick={this.submit.bind(this)}>Add</Button>
         <br />
         {this.state.inputValue}
       </form>
