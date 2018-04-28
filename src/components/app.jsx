@@ -1,5 +1,8 @@
 import React from 'react';
 import Jumbotron from 'react-bootstrap/lib/Jumbotron';
+import Navbar from 'react-bootstrap/lib/Navbar';
+import Nav from 'react-bootstrap/lib/Nav';
+import NavItem from 'react-bootstrap/lib/NavItem';
 import ModalFooter from 'react-bootstrap/lib/ModalFooter';
 import TodoIndex from './app/todoIndex';
 import ContactIndex from './app/contactIndex';
@@ -15,10 +18,18 @@ class App extends React.Component {
         </Jumbotron>
         <BrowserRouter>
           <div>
-            <Link to='/contact'>Contact me</Link>
-            <Link to='/todos'>Todos</Link>
-            <Route path='/todos' component={TodoIndex} />
-            <Route path='/contact' component={ContactIndex} />
+            <Navbar>
+              <Nav>
+                <NavItem>
+                  <Link bsStyle='pills' id='nav-link' to='/contact'>Contact me</Link>
+                </NavItem>
+                <NavItem>
+                  <Link bsStyle='pills' id='nav-link' to='/'>Todos</Link>
+                </NavItem>
+              </Nav>
+            </Navbar>
+            <Route exact path='/' component={TodoIndex} />
+            <Route exact path='/contact' component={ContactIndex} />
           </div>
         </BrowserRouter>
         <ModalFooter>Gergely Flórián Papp, 2018.</ModalFooter>

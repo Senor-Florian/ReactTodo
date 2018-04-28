@@ -5,11 +5,16 @@ body {
 }
 
 .jumbo {
-  margin-bottom: 50px;
   padding: 150px;
   background-image: url('../css/list3.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.link {
+  font-size: 50px; 
+  text-decoration: none;
+  color: black;
 }
 
 #header {
@@ -41,4 +46,8 @@ form {
 
 ul {
   list-style-type: none;
+}
+
+#nav-link {
+  color: black;
 }
